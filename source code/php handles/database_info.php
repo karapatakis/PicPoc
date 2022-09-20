@@ -1,6 +1,6 @@
 <?php
 
-$db_host = "localhost";
+$db_host = "mariadb";
 // Place the username for the MySQL database here
 $db_username = "root"; 
 // Place the password for the MySQL database here

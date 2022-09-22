@@ -3,7 +3,6 @@ session_start();
 require('database_info.php');
 
 $new=$_POST['new'];
-echo $new;
 
 $id=$_SESSION['id'];
 //get to server

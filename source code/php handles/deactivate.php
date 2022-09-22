@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-    ob_end_flush();
+    ob_start();
     //get user row
     require("database_info.php");
     $sql_for_user="SELECT * FROM users WHERE id='$_SESSION[id]'";

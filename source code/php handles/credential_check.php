@@ -4,7 +4,7 @@
     $given_name="$_POST[username]";
     $given_pass="$_POST[password]";
 
-    ob_end_flush();
+    ob_start();
     //to login automaticaly after registration
     if(isset($_SESSION['username'])&&!empty($_SESSION['username'])){
         $given_name=$_SESSION['username'];
@@ -38,6 +38,6 @@
         }
     
     mysqli_close($con);
-    header ("location: ./index.php");
+    header ("location: ../index.php");
     ob_end_flush();
 ?>

@@ -7,6 +7,7 @@ $id=$_POST['photo_id'];
 $result=mysqli_query($con, "SELECT * FROM gallery WHERE id=$id");
 $row=mysqli_fetch_array($result);
 
+ob_start();
 
 //delete local file
 $location='../'.$row['photo_path'].$row['photo_name'].$row['extention'];
@@ -45,5 +46,6 @@ if(!$result){
 }
 
 header("location: ../myprofile_screen.php");
+ob_end_flush();
 mysqli_close($con);
 ?>

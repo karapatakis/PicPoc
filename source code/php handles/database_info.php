@@ -6,7 +6,7 @@ $db_username = "root";
 // Place the password for the MySQL database here
 $db_pass = ""; 
 // Place the name for the MySQL database here
-$db_name = "pick_pock_db";
+$db_name = "pic_poc_db";
 
 // connection
 $con = mysqli_connect("$db_host" ,"$db_username", "$db_pass");

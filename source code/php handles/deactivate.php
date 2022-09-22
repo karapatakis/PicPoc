@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+    ob_end_flush();
     //get user row
     require("database_info.php");
     $sql_for_user="SELECT * FROM users WHERE id='$_SESSION[id]'";
@@ -55,4 +56,5 @@ session_start();
     
     require('logout.php');
     header("location: ../index.php");
+    ob_end_flush();
 ?>

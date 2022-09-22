@@ -5,6 +5,7 @@ require("database_info.php");
 $value=$_POST['search'];
 $value=trim($value);
 // echo $value;
+ob_start();
 if(empty($value)){
     echo 'Nothing to search';
 }else{
@@ -17,4 +18,5 @@ if(empty($value)){
     // }
 }
 header("location: ../index.php");
+ob_end_flush();
 ?>

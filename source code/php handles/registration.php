@@ -39,19 +39,20 @@ if(!empty($_FILES) && ($ferror == '0')){
 
     // Check if file size is acceptable
     if ($fsize > $mb * $max_file_size) {
-        echo "<script type='text/javascript'>alert('Sorry, your file is too large. Try again');
+        echo "<script type='text/javascript'>alert('Sorry, your image file is too large. Try again');
         location.href='../register_screen.php'</script>";
     }
     // Check if file already exists
     elseif (file_exists($destination)) {
-        echo "<script type='text/javascript'>alert('Sorry, file already exists.');
+        echo "<script type='text/javascript'>alert('Sorry, image file already exists.');
     location.href='../register_screen.php'</script>";
     }
 }
 else{
     $fsize =$_FILES['upfile']['size'];
     
-    if( $fsize >= $_POST['MAX_FILE_SIZE'] && isset($_POST['MAX_FILE_SIZE'])) $ferror = 2;
+    if( $fsize >= $_POST['MAX_FILE_SIZE'] && isset($_POST['MAX_FILE_SIZE']))
+    $ferror = 2;
     $phpFileUploadErrors = array(
         0 => 'There is no error, the file uploaded with success',
         1 => 'The uploaded file exceeds the upload_max_filesize directive in php.ini',
@@ -70,7 +71,7 @@ else{
 if(isset($Ufirstname) && isset($Ulastname) &&isset ($Ubirthday) &&isset ($Uusername) &&isset ($Upassword) && isset($Usex) && isset($Umail)){
     if(!empty($Ufirstname) && !empty($Ulastname) && !empty ($Ubirthday) && !empty ($Uusername) && !empty ($Upassword) && !empty($Usex) && !empty($Umail)){
         if($Upassword != $confirm_password){
-            echo "<script type='text/javascript'> alert('Password confirmation error');
+            echo "<script type='text/javascript'> alert('Password confirmation error, passwords don't match');
             location.href = '../register_screen.php'</script>";
         }else{
             // importing to database

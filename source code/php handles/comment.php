@@ -7,6 +7,7 @@ $who=$_POST['user_name'];
 $photo_id=$_POST['photo_id'];
 $time=date('h:i:s');
 
+ob_end_flush();
 if(!empty($text)){
     $sql="INSERT INTO comments(id, user_name, photo_id, comment, time) VALUES (NULL, '$who', '$photo_id', '$text', '$time')";
     $comment=mysqli_query($con, $sql);
@@ -16,5 +17,6 @@ if(!empty($text)){
    
 }
 
- header("location: ../index.php");
+header("location: ../index.php");
+ob_end_flush();
 ?>

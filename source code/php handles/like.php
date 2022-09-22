@@ -4,7 +4,7 @@ require('database_info.php');
 
 $photo=$_POST['photo_id'];
 $user=$_SESSION['id'];
-
+ob_start();
 $sql="SELECT * FROM likes WHERE photo_id='$photo' AND user_id='$user' ";
 $res=mysqli_query($con, $sql);
 $liked=mysqli_fetch_array($res);
@@ -27,6 +27,7 @@ if(empty($liked)){
         echo 'photo disliked<br>';
     }
 }
+
 //echo 'current like count:';
 $sql="SELECT * FROM likes WHERE photo_id='$photo' ";
 $res=mysqli_query($con, $sql);
@@ -39,6 +40,8 @@ $res=mysqli_query($con, $sql);
 if(empty($res)){
     echo 'error';
 }
-header("location: ../index.php")
+
+header("location: ../index.php");
+ob_end_flush();
 ?>
 

@@ -157,7 +157,7 @@ session_start();
         <p class="copyright">
           Website Template by
           <a target="_blank" href="http://www.tristarwebdesign.co.uk/">Tristar</a> <br>
-          Template Perfected by <a>Karapatakis & Androutsos</a>
+          Template by <a>Karapatakis</a>
         </p>
       </footer>
     </div>
